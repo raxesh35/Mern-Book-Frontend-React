@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import axios from 'axios';
+import axios from '../plugins/axios';
 import { Link } from 'react-router-dom';
 import BookCard from './BookCard';
 
@@ -14,7 +14,7 @@ class ShowBookList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:8082/api/books')
+      .get('/books')
       .then(res => {
         this.setState({
           books: res.data
